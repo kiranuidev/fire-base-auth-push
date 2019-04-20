@@ -28,6 +28,9 @@ class Home extends Component {
         <View style={marginBox}>
           <Button onPress={Actions.addProduct} title="Go To Add Product" />
         </View>
+        <View style={marginBox}>
+          <Button onPress={Actions.getProducts} title="Go To Products" />
+        </View>
 
         <View>
           <Text style={title}>User: {email}</Text>

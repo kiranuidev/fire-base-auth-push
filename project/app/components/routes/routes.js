@@ -13,6 +13,7 @@ import TodolistContainer from '../todolist';
 import configureStore from '../../store';
 import { AddProduct } from '../product/addProduct';
 import AddProductContainer from '../product/addProductContainer';
+import ProductListContainer from '../product/productListContainer';
 
 const store = configureStore();
 const RouterRedux = connect()(Router);
@@ -30,7 +31,7 @@ export default class Routes extends React.Component {
             <Scene key="counter" component={CounterContainer} title="Counter" />
             <Scene key="todolist" component={TodolistContainer} title="To-Do List" />
             <Scene key="addProduct" component={AddProductContainer} title="Add Product" />
-
+            <Scene key="getProducts" component={ProductListContainer} title="Products" />
           </Scene>
         </RouterRedux>
       </Provider>
