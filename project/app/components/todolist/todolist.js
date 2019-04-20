@@ -6,6 +6,7 @@ import { Add, Remove } from '../../actions/todolist/actions';
 
 import { TodolistInput } from './todolistInput';
 import { TodoListItems } from './todolistItems';
+import {Payment} from  '../payment/payment';
 
 class TodoList extends React.Component {
   onAddTodo = text => this.props.onAdd(text);
@@ -19,6 +20,7 @@ class TodoList extends React.Component {
       <View style={styles.container}>
         <TodolistInput placeholder={'Type a to do, what you will learn?'} onSubmitEditing={this.onAddTodo} />
         <TodoListItems list={todos} onPressItem={this.onRemoveTodo} />
+        <Payment />
       </View>
     );
   }

@@ -19,5 +19,11 @@ export const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 16,
     textAlign: 'center'
-  }
+  },
+  payButton: {
+    backgroundColor: '#99121b',
+    padding: 15,
+    margin: 10,
+    marginBottom: 5
+  },
 });
