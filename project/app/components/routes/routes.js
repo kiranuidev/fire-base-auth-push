@@ -11,6 +11,7 @@ import SignupContainer from '../auth/SignupForm';
 import TodolistContainer from '../todolist';
 
 import configureStore from '../../store';
+import { AddProduct } from '../product/addProduct';
 
 const store = configureStore();
 const RouterRedux = connect()(Router);
@@ -27,6 +28,8 @@ export default class Routes extends React.Component {
             <Scene key="search" component={SearchContainer} title="Search" />
             <Scene key="counter" component={CounterContainer} title="Counter" />
             <Scene key="todolist" component={TodolistContainer} title="To-Do List" />
+            <Scene key="addProduct" component={AddProduct} title="Add Product" />
+
           </Scene>
         </RouterRedux>
       </Provider>

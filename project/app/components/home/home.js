@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import { View, Button, Image, Text } from 'react-native';
-import { connect } from 'react-redux';
-import Icon from 'react-native-vector-icons/Ionicons';
-import { styles } from './styles';
-import { Actions } from 'react-native-router-flux';
-import { LoadingIndicator } from '../loadingIndicator/loadingIndicator';
-import { logoutUser } from '../../actions/session/actions';
+import React, { Component } from "react";
+import { View, Button, Image, Text } from "react-native";
+import { connect } from "react-redux";
+import Icon from "react-native-vector-icons/Ionicons";
+import { styles } from "./styles";
+import { Actions } from "react-native-router-flux";
+import { LoadingIndicator } from "../loadingIndicator/loadingIndicator";
+import { logoutUser } from "../../actions/session/actions";
 
 class Home extends Component {
   logout = () => {
     this.props.logout();
     setTimeout(() => {
-      Actions.reset('login');
+      Actions.reset("login");
     }, 100);
   };
 
@@ -25,10 +25,14 @@ class Home extends Component {
         <View style={marginBox}>
           <Button onPress={this.logout} title="Logout" />
         </View>
+        <View style={marginBox}>
+          <Button onPress={Actions.addProduct} title="Go To Add Product" />
+        </View>
 
         <View>
           <Text style={title}>User: {email}</Text>
           <Button onPress={Actions.search} title="Go to Search" />
+
           <Button onPress={Actions.todolist} title="Start To-Do List" />
         </View>
 
