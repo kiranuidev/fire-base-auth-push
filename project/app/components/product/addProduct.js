@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux';
+import {addProduct} from '../../actions/products/product.action'
 import {
   View,
   TextInput,
@@ -7,7 +9,7 @@ import {
   Text
 } from "react-native";
 import { styles } from "./styles";
-export class AddProduct extends Component {
+class AddProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,6 +24,7 @@ export class AddProduct extends Component {
  
   handleAddProduct() {
       console.log(this.state.product);
+      this.props.addProduct(this.state.product);
   }
   render() {
     return (
@@ -57,3 +60,18 @@ export class AddProduct extends Component {
     );
   }
 }
+
+// const mapStateToProps = ({ todolistReducer: { todos } }) => ({
+//   todos: todos
+// });
+
+const mapDispatchToProps = {
+  addProduct: addProduct,
+};
+
+export default connect(
+//making it null as we don't need props here  mapStateToProps,
+  null,
+  mapDispatchToProps
+)(AddProduct);
+

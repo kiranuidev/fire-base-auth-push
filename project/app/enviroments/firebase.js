@@ -1,5 +1,5 @@
-import firebase from '@firebase/app';
-import '@firebase/auth';
+import firebase from 'firebase';
+// import '@firebase/auth';
 
 const config ={
   apiKey: "AIzaSyCcLHA5FYcCJeM21rt3r4yutOGs8ybxdfw",
@@ -16,6 +16,8 @@ class FirebaseService {
   constructor() {
     if (!instance) {
       this.app = firebase.initializeApp(config);
+      this.db = this.app.database();
+      this.auth = this.app;
       instance = this;
     }
     return instance;
